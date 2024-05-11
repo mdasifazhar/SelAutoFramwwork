@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="1" parallel="methods">
+
+	<test name="TestOne">
+		<classes>
+			<class name="com.qa.testcases.testNg.TestNgBase" />
+			<class name="com.qa.testcases.testNg.TestNgClass" />
+			<class name="com.qa.testcases.testNg.TestNgLogin" />
+		</classes>
+	</test> <!-- Test -->
+	<listeners>
+	<listener class-name="com.qa.testcases.testNg.listner.MyAnnotationTransformer"/>
+	<listener class-name="com.qa.testcases.testNg.listner.MyTestListner"/>
+	</listeners>
+	<test name="TestTwo">
+		<parameter name="baseurl" value="https://www.yahoo.com/" />
+		<parameter name="email" value="test@yahoo.com" />
+		<parameter name="password" value="testing@123" />
+		<classes>
+		<class name="com.qa.testcases.testNg.RetryLogic"/>
+			<class name="com.qa.testcases.testNg.TestNgBase" />
+			<class name="com.qa.testcases.testNg.parameter.YahooLoginTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
